@@ -1,0 +1,5 @@
+name: Hardpoint
+machine_name: hardpoint
+version: 0.0.1
+requirements:
+  - genrpg:^0.0.1
