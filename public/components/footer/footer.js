@@ -1,4 +1,5 @@
 (function ($) {
+  const NS = ".hardpoint-footer";
   const FOOTER_ID = "hardpoint-footer";
 
   function mount() {
@@ -13,6 +14,11 @@
     $("#" + FOOTER_ID).remove();
   }
 
-  $(window).on("genrpg:instance-entered", mount);
-  $(window).on("genrpg:instance-exited", unmount);
+  function teardown() {
+    unmount();
+    $(window).off(NS);
+  }
+
+  $(window).on("genrpg:instance-entered" + NS, mount);
+  $(window).on("genrpg:instance-exited" + NS, teardown);
 })(jQuery);
