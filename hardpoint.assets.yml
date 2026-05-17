@@ -1,0 +1,4 @@
+css:
+  - public/components/footer/footer.css
+js:
+  - public/components/footer/footer.js
