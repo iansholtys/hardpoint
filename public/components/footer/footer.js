@@ -1,24 +1,48 @@
-(function ($) {
-  const NS = ".hardpoint-footer";
-  const FOOTER_ID = "hardpoint-footer";
+/**
+ * Hardpoint footer — fixed bar at the bottom of the instance view.
+ */
+class Footer_Hardpoint {
+  static defaultId = "hardpoint-footer";
 
-  function mount() {
-    if ($("#" + FOOTER_ID).length) {
-      return;
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.id] Root element id.
+   * @param {string} [options.label] Text shown in the footer.
+   */
+  constructor(options = {}) {
+    this.id = options.id || Footer.defaultId;
+    this.label = options.label || "Hardpoint";
+    this.isMounted = false;
+    this.elements = { $root: null };
+  }
+
+  /**
+   * Append the footer to the document body.
+   * @returns {this}
+   */
+  mount() {
+    this.elements.$root = $("#" + this.id);
+    if (this.isMounted || this.elements.$root.length) {
+      this.isMounted = true;
+      return this;
     }
 
-    $("<footer>", { id: FOOTER_ID, text: "Hardpoint" }).appendTo("body");
+    this.elements.$root = $("<footer>", {
+      id: this.id,
+      class: "hardpoint-footer",
+      text: this.label,
+    }).appendTo("body");
+
+    this.isMounted = true;
+    return this;
   }
 
-  function unmount() {
-    $("#" + FOOTER_ID).remove();
+  /**
+   * Remove the footer from the DOM.
+   */
+  destroy() {
+    this.elements.$root?.remove();
+    this.elements.$root = null;
+    this.isMounted = false;
   }
-
-  function teardown() {
-    unmount();
-    $(window).off(NS);
-  }
-
-  $(window).on("genrpg:instance-entered" + NS, mount);
-  $(window).on("genrpg:instance-exited" + NS, teardown);
-})(jQuery);
+}
