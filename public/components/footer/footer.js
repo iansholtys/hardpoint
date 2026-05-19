@@ -10,7 +10,7 @@ class Footer_Hardpoint {
    * @param {string} [options.label] Text shown in the footer.
    */
   constructor(options = {}) {
-    this.id = options.id || Footer.defaultId;
+    this.id = options.id || Footer_Hardpoint.defaultId;
     this.label = options.label || "Hardpoint";
     this.isMounted = false;
     this.elements = { $root: null };
