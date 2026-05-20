@@ -3,8 +3,13 @@
   let footer = null;
 
   function init() {
+    const $footerHost = window.appLayout?.getSection("footer");
+    if (!$footerHost?.length) {
+      return;
+    }
+
     footer = new Footer_Hardpoint();
-    footer.mount();
+    $footerHost.append(footer.build());
   }
 
   function teardown() {

@@ -12,29 +12,25 @@ class Footer_Hardpoint {
   constructor(options = {}) {
     this.id = options.id || Footer_Hardpoint.defaultId;
     this.label = options.label || "Hardpoint";
-    this.isMounted = false;
     this.elements = { $root: null };
   }
 
   /**
-   * Append the footer to the document body.
-   * @returns {this}
+   * Build footer DOM.
+   * @returns {JQuery}
    */
-  mount() {
-    this.elements.$root = $("#" + this.id);
-    if (this.isMounted || this.elements.$root.length) {
-      this.isMounted = true;
-      return this;
+  build() {
+    if (this.elements.$root?.length) {
+      return this.elements.$root;
     }
 
     this.elements.$root = $("<footer>", {
       id: this.id,
       class: "hardpoint-footer",
       text: this.label,
-    }).appendTo("body");
+    });
 
-    this.isMounted = true;
-    return this;
+    return this.elements.$root;
   }
 
   /**
@@ -43,6 +39,5 @@ class Footer_Hardpoint {
   destroy() {
     this.elements.$root?.remove();
     this.elements.$root = null;
-    this.isMounted = false;
   }
 }
