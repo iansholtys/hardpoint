@@ -1,11 +1,9 @@
-const CHARACTER_POST_GET_EVENT = "CharacterPostGetEvent";
-
 const STAT_KEYS = ["spirit", "mind", "body"];
 
 class CharacterSummarySubscriber {
   static getSubscribedEvents() {
     return {
-      [CHARACTER_POST_GET_EVENT]: "onCharacterPostGet",
+      CharacterPostGetEvent: "onCharacterPostGet",
     };
   }
 

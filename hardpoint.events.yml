@@ -2,4 +2,5 @@
 events: []
 
 subscribers:
+  - module: events/subscribers/character/validateCharacterSubscriber.js
   - module: events/subscribers/character/summarySubscriber.js
