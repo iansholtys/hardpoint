@@ -2,6 +2,7 @@
 
 CREATE TABLE IF NOT EXISTS hardpoint.characters (
   guid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  character_guid uuid NOT NULL UNIQUE REFERENCES genrpg.characters(guid) ON DELETE CASCADE,
   occupation_guid uuid REFERENCES hardpoint.occupations(guid) ON DELETE SET NULL,
   body integer NOT NULL DEFAULT 0,
   mind integer NOT NULL DEFAULT 0,
