@@ -1,0 +1,5 @@
+# Events this package may dispatch (from API handlers, cron, workflows, etc.)
+events: []
+
+subscribers:
+  - module: events/subscribers/character/summarySubscriber.js
