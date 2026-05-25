@@ -10,9 +10,6 @@ class CharacterSummarySubscriber {
   onCharacterPostGet(event) {
     for (const character of event.characters) {
       const summary = this.buildCharacterSummary(character);
-      if (!summary) {
-        continue;
-      }
 
       character.extensions.hardpoint = {
         ...(character.extensions.hardpoint || {}),
@@ -61,12 +58,12 @@ class CharacterSummarySubscriber {
   }
 
   buildCharacterSummary(character) {
+    const name = this.characterDisplayName(character);
     const stats = this.readHardpointStats(character);
     if (!stats) {
-      return null;
+      return `${name} has no Hardpoint stats recorded yet.`;
     }
 
-    const name = this.characterDisplayName(character);
     const allEqual = stats.every((stat) => stat.value === stats[0].value);
     if (allEqual) {
       return `${name} is balanced across spirit, mind, and body`;
