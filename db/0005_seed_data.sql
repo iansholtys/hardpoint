@@ -47,36 +47,36 @@ INSERT INTO hardpoint.occupations (guid, name, description) VALUES
 
 INSERT INTO hardpoint.occupation_skills (guid, occupation_guid, skill_guid, value) VALUES
 -- Rural: Craft and Ride
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Rural'), (SELECT guid FROM hardpoint.skills WHERE name = 'Craft' AND is_pilot_skill = false), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Rural'), (SELECT guid FROM hardpoint.skills WHERE name = 'Ride'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Rural' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Craft' AND is_pilot_skill = false LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Rural' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Ride' LIMIT 1), 1),
 -- Wilderness: Survival and Awareness
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Wilderness'), (SELECT guid FROM hardpoint.skills WHERE name = 'Survival'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Wilderness'), (SELECT guid FROM hardpoint.skills WHERE name = 'Awareness'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Wilderness' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Survival' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Wilderness' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Awareness' LIMIT 1), 1),
 -- Industrial: Mechanics level 2
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Industrial'), (SELECT guid FROM hardpoint.skills WHERE name = 'Mechanics'), 2),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Industrial' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Mechanics' LIMIT 1), 2),
 -- Journalist: Investigation and Craft
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Journalist'), (SELECT guid FROM hardpoint.skills WHERE name = 'Investigation'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Journalist'), (SELECT guid FROM hardpoint.skills WHERE name = 'Craft' AND is_pilot_skill = false), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Journalist' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Investigation' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Journalist' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Craft' AND is_pilot_skill = false LIMIT 1), 1),
 -- Entertainer: Perform and Etiquette
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Entertainer'), (SELECT guid FROM hardpoint.skills WHERE name = 'Perform'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Entertainer'), (SELECT guid FROM hardpoint.skills WHERE name = 'Etiquette'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Entertainer' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Perform' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Entertainer' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Etiquette' LIMIT 1), 1),
 -- Urban: Barter and Etiquette
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Urban'), (SELECT guid FROM hardpoint.skills WHERE name = 'Barter'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Urban'), (SELECT guid FROM hardpoint.skills WHERE name = 'Etiquette'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Urban' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Barter' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Urban' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Etiquette' LIMIT 1), 1),
 -- Security: Athletics and Shooting
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Security'), (SELECT guid FROM hardpoint.skills WHERE name = 'Athletics'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Security'), (SELECT guid FROM hardpoint.skills WHERE name = 'Shooting'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Security' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Athletics' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Security' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Shooting' LIMIT 1), 1),
 -- Criminal: Larceny and Stealth
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Criminal'), (SELECT guid FROM hardpoint.skills WHERE name = 'Larceny'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Criminal'), (SELECT guid FROM hardpoint.skills WHERE name = 'Stealth'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Criminal' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Larceny' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Criminal' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Stealth' LIMIT 1), 1),
 -- Academic: Academics level 2
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Academic'), (SELECT guid FROM hardpoint.skills WHERE name = 'Academics'), 2),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Academic' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Academics' LIMIT 1), 2),
 -- Laborer: Athletics and Close Combat
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Laborer'), (SELECT guid FROM hardpoint.skills WHERE name = 'Athletics'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Laborer'), (SELECT guid FROM hardpoint.skills WHERE name = 'Close Combat'), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Laborer' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Athletics' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Laborer' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Close Combat' LIMIT 1), 1),
 -- Medical: Medicine and Academics
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Medical'), (SELECT guid FROM hardpoint.skills WHERE name = 'Medicine'), 1),
-(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Medical'), (SELECT guid FROM hardpoint.skills WHERE name = 'Academics'), 1);
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Medical' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Medicine' LIMIT 1), 1),
+(gen_random_uuid(), (SELECT guid FROM hardpoint.occupations WHERE name = 'Medical' LIMIT 1), (SELECT guid FROM hardpoint.skills WHERE name = 'Academics' LIMIT 1), 1);
 
 INSERT INTO hardpoint.hardpoint_types (guid, name, description) VALUES
 (gen_random_uuid(), 'Integrated', 'Built-in systems that are permanently attached to the vehicle frame.'),

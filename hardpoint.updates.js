@@ -65,18 +65,55 @@ module.exports = {
     `);
   },
   2: async (client) => {
-    const tableResult = await client.query(
+    const readyResult = await client.query(
       `
         SELECT 1
-        FROM information_schema.tables
+        FROM information_schema.columns
         WHERE table_schema = 'hardpoint'
           AND table_name = 'items'
-          AND table_type = 'BASE TABLE'
+          AND column_name = 'item_guid'
       `,
     );
-    if (tableResult.rows.length) {
+    if (readyResult.rows.length) {
       return;
     }
+
+    await client.query(`DROP TABLE IF EXISTS hardpoint.items`);
+
+    await client.query(`
+      CREATE TABLE hardpoint.items (
+        item_guid uuid PRIMARY KEY REFERENCES genrpg.items(guid) ON DELETE CASCADE,
+        value double precision,
+        create_datetime timestamptz NOT NULL DEFAULT now(),
+        update_datetime timestamptz NOT NULL DEFAULT now()
+      )
+    `);
+
+    await client.query(`
+      DROP TRIGGER IF EXISTS items_update_datetime ON hardpoint.items
+    `);
+    await client.query(`
+      CREATE TRIGGER items_update_datetime
+        BEFORE UPDATE ON hardpoint.items
+        FOR EACH ROW EXECUTE FUNCTION genrpg.set_update_datetime()
+    `);
+  },
+  /** For installs where step 2 ran before the item_guid column check existed. */
+  3: async (client) => {
+    const readyResult = await client.query(
+      `
+        SELECT 1
+        FROM information_schema.columns
+        WHERE table_schema = 'hardpoint'
+          AND table_name = 'items'
+          AND column_name = 'item_guid'
+      `,
+    );
+    if (readyResult.rows.length) {
+      return;
+    }
+
+    await client.query(`DROP TABLE IF EXISTS hardpoint.items`);
 
     await client.query(`
       CREATE TABLE hardpoint.items (
