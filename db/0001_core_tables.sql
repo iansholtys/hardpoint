@@ -47,12 +47,17 @@ CREATE TRIGGER hardpoint_types_update_datetime BEFORE UPDATE ON hardpoint.hardpo
 
 CREATE TABLE IF NOT EXISTS hardpoint.items (
   guid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  item_guid uuid REFERENCES genrpg.items(guid) ON DELETE CASCADE,
   name text NOT NULL,
   description text,
   is_equipment boolean NOT NULL DEFAULT false,
+  value double precision,
   create_datetime timestamptz NOT NULL DEFAULT now(),
   update_datetime timestamptz NOT NULL DEFAULT now()
 );
+CREATE UNIQUE INDEX IF NOT EXISTS items_item_guid_key
+  ON hardpoint.items (item_guid)
+  WHERE item_guid IS NOT NULL;
 DROP TRIGGER IF EXISTS items_update_datetime ON hardpoint.items;
 CREATE TRIGGER items_update_datetime BEFORE UPDATE ON hardpoint.items FOR EACH ROW EXECUTE FUNCTION genrpg.set_update_datetime();
 
