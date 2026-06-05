@@ -40,7 +40,7 @@ CREATE TRIGGER character_skills_update_datetime BEFORE UPDATE ON hardpoint.chara
 CREATE TABLE IF NOT EXISTS hardpoint.character_inventory (
   guid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   character_guid uuid NOT NULL REFERENCES hardpoint.characters(guid) ON DELETE CASCADE,
-  item_guid uuid NOT NULL REFERENCES hardpoint.items(guid) ON DELETE CASCADE,
+  item_guid uuid NOT NULL REFERENCES genrpg.items(guid) ON DELETE CASCADE,
   name text,
   description text,
   quantity integer NOT NULL DEFAULT 1,

@@ -16,6 +16,172 @@ async function addGenrpgItemExtensionColumns(client) {
   `);
 }
 
+async function dropHardpointItemsForeignKey(client, tableName) {
+  const result = await client.query(
+    `
+      SELECT con.conname AS constraint_name
+      FROM pg_constraint con
+      JOIN pg_class rel ON rel.oid = con.conrelid
+      JOIN pg_namespace nsp ON nsp.oid = rel.relnamespace
+      WHERE nsp.nspname = 'hardpoint'
+        AND rel.relname = $1
+        AND con.contype = 'f'
+        AND con.confrelid = 'hardpoint.items'::regclass
+    `,
+    [tableName],
+  );
+
+  for (const row of result.rows) {
+    await client.query(
+      `ALTER TABLE hardpoint."${tableName}" DROP CONSTRAINT "${row.constraint_name}"`,
+    );
+  }
+}
+
+async function itemForeignKeyTargetsGenrpgItems(client, tableName) {
+  const result = await client.query(
+    `
+      SELECT pg_get_constraintdef(con.oid) AS definition
+      FROM pg_constraint con
+      JOIN pg_class rel ON rel.oid = con.conrelid
+      JOIN pg_namespace nsp ON nsp.oid = rel.relnamespace
+      WHERE nsp.nspname = 'hardpoint'
+        AND rel.relname = $1
+        AND con.contype = 'f'
+        AND pg_get_constraintdef(con.oid) LIKE '%(item_guid)%'
+    `,
+    [tableName],
+  );
+
+  return result.rows.some((row) => row.definition.includes("genrpg.items"));
+}
+
+async function canRepointItemForeignKey(client, tableName) {
+  const result = await client.query(
+    `
+      SELECT 1
+      FROM hardpoint."${tableName}" child
+      LEFT JOIN genrpg.items gi ON gi.guid = child.item_guid
+      WHERE child.item_guid IS NOT NULL
+        AND gi.guid IS NULL
+      LIMIT 1
+    `,
+  );
+
+  return !result.rows.length;
+}
+
+async function repointItemForeignKeys(client) {
+  const foreignKeys = [
+    { table: "item_hardpoints", onDelete: "CASCADE" },
+    { table: "character_inventory", onDelete: "CASCADE" },
+    { table: "vehicle_hardpoints", onDelete: "SET NULL" },
+    { table: "character_vehicle_hardpoints", onDelete: "SET NULL" },
+  ];
+
+  for (const { table, onDelete } of foreignKeys) {
+    const tableResult = await client.query(
+      `
+        SELECT 1
+        FROM information_schema.tables
+        WHERE table_schema = 'hardpoint'
+          AND table_name = $1
+      `,
+      [table],
+    );
+    if (!tableResult.rows.length) {
+      continue;
+    }
+
+    if (await itemForeignKeyTargetsGenrpgItems(client, table)) {
+      continue;
+    }
+
+    if (!(await canRepointItemForeignKey(client, table))) {
+      console.warn(
+        `Skipping hardpoint.${table} item_guid foreign key migration: existing rows do not reference genrpg.items.`,
+      );
+      continue;
+    }
+
+    await dropHardpointItemsForeignKey(client, table);
+    await client.query(
+      `
+        ALTER TABLE hardpoint."${table}"
+          ADD CONSTRAINT "${table}_item_guid_fkey"
+          FOREIGN KEY (item_guid) REFERENCES genrpg.items(guid) ON DELETE ${onDelete}
+      `,
+    );
+  }
+}
+
+async function reshapeHardpointItemsForGenrpgExtension(client) {
+  const tableResult = await client.query(
+    `
+      SELECT 1
+      FROM information_schema.tables
+      WHERE table_schema = 'hardpoint'
+        AND table_name = 'items'
+    `,
+  );
+  if (!tableResult.rows.length) {
+    return;
+  }
+
+  const legacyNameResult = await client.query(
+    `
+      SELECT 1
+      FROM information_schema.columns
+      WHERE table_schema = 'hardpoint'
+        AND table_name = 'items'
+        AND column_name = 'name'
+    `,
+  );
+  if (legacyNameResult.rows.length) {
+    await client.query(`ALTER TABLE hardpoint.items ALTER COLUMN name DROP NOT NULL`);
+    await client.query(`ALTER TABLE hardpoint.items DROP COLUMN name`);
+  }
+
+  await client.query(`ALTER TABLE hardpoint.items DROP COLUMN IF EXISTS description`);
+
+  await repointItemForeignKeys(client);
+
+  await client.query(`DELETE FROM hardpoint.items WHERE item_guid IS NULL`);
+
+  const legacyGuidResult = await client.query(
+    `
+      SELECT 1
+      FROM information_schema.columns
+      WHERE table_schema = 'hardpoint'
+        AND table_name = 'items'
+        AND column_name = 'guid'
+    `,
+  );
+  if (!legacyGuidResult.rows.length) {
+    return;
+  }
+
+  await client.query(`DROP INDEX IF EXISTS hardpoint.items_item_guid_key`);
+  await client.query(`ALTER TABLE hardpoint.items DROP CONSTRAINT IF EXISTS items_pkey`);
+  await client.query(`ALTER TABLE hardpoint.items DROP COLUMN guid`);
+  await client.query(`ALTER TABLE hardpoint.items ALTER COLUMN item_guid SET NOT NULL`);
+
+  const pkResult = await client.query(
+    `
+      SELECT 1
+      FROM pg_constraint con
+      JOIN pg_class rel ON rel.oid = con.conrelid
+      JOIN pg_namespace nsp ON nsp.oid = rel.relnamespace
+      WHERE nsp.nspname = 'hardpoint'
+        AND rel.relname = 'items'
+        AND con.contype = 'p'
+    `,
+  );
+  if (!pkResult.rows.length) {
+    await client.query(`ALTER TABLE hardpoint.items ADD PRIMARY KEY (item_guid)`);
+  }
+}
+
 module.exports = {
   1: async (client) => {
     const tableResult = await client.query(
@@ -84,4 +250,5 @@ module.exports = {
   },
   2: addGenrpgItemExtensionColumns,
   3: addGenrpgItemExtensionColumns,
+  4: reshapeHardpointItemsForGenrpgExtension,
 };

@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS hardpoint.character_vehicle_hardpoints (
   guid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   character_vehicle_guid uuid NOT NULL REFERENCES hardpoint.character_vehicles(guid) ON DELETE CASCADE,
   hardpoint_type_guid uuid NOT NULL REFERENCES hardpoint.hardpoint_types(guid) ON DELETE CASCADE,
-  item_guid uuid REFERENCES hardpoint.items(guid) ON DELETE SET NULL,
+  item_guid uuid REFERENCES genrpg.items(guid) ON DELETE SET NULL,
   create_datetime timestamptz NOT NULL DEFAULT now(),
   update_datetime timestamptz NOT NULL DEFAULT now()
 );
