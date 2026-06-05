@@ -1,5 +1,5 @@
 name: Hardpoint
 machine_name: hardpoint
-version: 0.0.16
+version: 0.0.17
 requirements:
   - genrpg:>=0.0.1
