@@ -1,0 +1,3 @@
+extensions:
+  - entity: item
+    module: entities/extensions/items.js
