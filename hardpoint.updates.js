@@ -33,7 +33,22 @@ async function ensureHardpointItemsTable(client) {
   `);
 }
 
+async function needsMaintenance(client) {
+  const readyResult = await client.query(
+    `
+      SELECT 1
+      FROM information_schema.columns
+      WHERE table_schema = 'hardpoint'
+        AND table_name = 'items'
+        AND column_name = 'item_guid'
+    `,
+  );
+  return !readyResult.rows.length;
+}
+
 module.exports = {
+  maintenance: [ensureHardpointItemsTable],
+  needsMaintenance,
   1: async (client) => {
     const tableResult = await client.query(
       `
