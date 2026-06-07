@@ -8,30 +8,24 @@ class CharacterSummarySubscriber {
   }
 
   onCharacterPostGet(event) {
-    for (const character of event.characters) {
+    for (const character of event.entities || []) {
       const summary = this.buildCharacterSummary(character);
 
-      character.extensions.hardpoint = {
-        ...(character.extensions.hardpoint || {}),
+      character.packageData.hardpoint = {
+        ...(character.packageData.hardpoint || {}),
         summary,
       };
     }
   }
 
   characterDisplayName(character) {
-    const core = character.packages?.genrpg || {};
-    return core.display_name || core.full_name || "Someone";
+    return character.displayName || character.fullName || "Someone";
   }
 
   readHardpointStats(character) {
-    const hardpoint = character.packages?.hardpoint;
-    if (!hardpoint) {
-      return null;
-    }
-
     const stats = [];
     for (const key of STAT_KEYS) {
-      const value = Number(hardpoint[key]);
+      const value = Number(character[key]);
       if (!Number.isFinite(value)) {
         continue;
       }

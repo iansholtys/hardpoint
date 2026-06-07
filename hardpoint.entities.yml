@@ -1,3 +1,5 @@
 extensions:
   - entity: item
     module: entities/extensions/items.js
+  - entity: character
+    module: entities/extensions/characters.js

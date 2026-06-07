@@ -24,35 +24,18 @@ class ValidateCharacterSubscriber {
     };
   }
 
-  ensureHardpointStats(payload) {
-    if (!payload || typeof payload !== "object") {
-      return;
-    }
-    if (!payload.packages || typeof payload.packages !== "object") {
-      payload.packages = {};
-    }
-    if (!payload.packages.hardpoint || typeof payload.packages.hardpoint !== "object") {
-      payload.packages.hardpoint = {};
-    }
-
-    const hardpoint = payload.packages.hardpoint;
+  ensureHardpointStats(character) {
     for (const key of STAT_KEYS) {
-      hardpoint[key] = normalizeStat(hardpoint[key]);
+      character[key] = normalizeStat(character[key]);
     }
   }
 
   onPreCreate(event) {
-    if (!event.instancePackageNames?.includes("hardpoint")) {
-      return;
-    }
-    this.ensureHardpointStats(event.payload);
+    this.ensureHardpointStats(event.entity);
   }
 
   onPreUpdate(event) {
-    if (!event.instancePackageNames?.includes("hardpoint")) {
-      return;
-    }
-    this.ensureHardpointStats(event.payload);
+    this.ensureHardpointStats(event.entity);
   }
 }
 
