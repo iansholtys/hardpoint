@@ -161,7 +161,7 @@ Defense measures a character's ability to avoid incoming attacks through quick r
 Defense is calculated as follows:
 
 ```
-Defense = 3 + Body + Athletics (Skill)
+Defense = 3 + Body + Relevant Skill (Defaults to Athletics outside of combat, during combat would be Close/Mid/Far based on positioning against enemy)
 ```
 
 The base value of **3** represents average situational reflexes — the natural ability any functional human has to flinch, duck, or step aside from an obvious threat. Body adds raw physical agility and reaction speed, while Athletics is a trained skill representing deliberate combat movement, footwork, and evasion techniques.
