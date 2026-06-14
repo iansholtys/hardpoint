@@ -4,7 +4,7 @@ Hardpoint vehicles operate under a distinct statistical framework from character
 
 ## Primary Stats Overview
 
-Vehicles in Hardpoint define seven primary stats:
+Vehicles in Hardpoint define nine primary stats:
 
 - **Armor**: Damage reduction against incoming attacks.
 - **Performance**: Abstract relative performance rating within the vehicle's class.
@@ -13,8 +13,72 @@ Vehicles in Hardpoint define seven primary stats:
 - **Hardpoints**: Attachment points for weapons, shields, engines, and other systems.
 - **Cargo**: Available storage space measured in "cubes".
 - **Traits**: Frame-level upgrades that improve performance or grant specialized capabilities.
+- **Scale**: Classification of physical magnitude affecting cross-scale combat modifiers.
+- **Size**: Numerical rating (0-9) denoting relative size within a Scale.
 
 Unlike character primary stats — which are constrained by a fixed sum — vehicle primary stats can vary independently depending on the vessel's design philosophy. A heavily armored capital ship will naturally sacrifice Performance, while an agile fighter trades Structure for superior maneuverability. These trade-offs form the core of vehicle customization and tactical decision-making.
+
+---
+
+## Scale
+
+Scale classifies vehicles by physical magnitude into four distinct categories: **Personal**, **Vehicle**, **Capital**, and **Supermassive**. Scale is a foundational property that determines how damage is calculated in cross-scale combat, applies hit disadvantage penalties for targeting significantly smaller or larger opponents, and provides a consistent framework for comparing vehicles across orders of magnitude.
+
+### What Scale Influences
+
+Scale directly affects the following combat mechanics:
+
+- **Cross-scale damage modifiers**: Attacking a target one scale larger halves damage (before armor calculation); attacking a target one scale smaller doubles damage. Each additional scale difference compounds this effect multiplicatively.
+- **Hit disadvantage**: Targeting one scale smaller grants Disadvantage to hit (2 Disadvantage for two scales difference, and so on). A Capital-scale vehicle targeting Personal-scale suffers 2 Disadvantage.
+- **Practical engagement range**: Weapons beyond two scales differ become largely impractical due to compounded penalties, making cross-scale engagements beyond one tier strategically inefficient.
+
+### Practical Context
+
+| Scenario | Small Scale (Personal/Vehicle) | Large Scale (Capital/Supermassive) |
+| -------- | ------------------------------ | ---------------------------------- |
+| Fighting same scale | Standard damage and accuracy | Standard damage and accuracy |
+| Fighting smaller targets | Double damage per scale difference; risk of Disadvantage | Double damage per scale difference; heavy Disadvantage (-2+ scales) |
+| Fighting larger targets | Half damage per scale difference; may be irrelevant | Absorbs half damage from smaller attackers with ease |
+
+### Scale Categories
+
+| Scale | Size Range | Typical Vehicles |
+| ----- | ---------- | ---------------- |
+| Personal | 0-5m | People, power suits, small mechs |
+| Vehicle | 5-100m | Cars, aircraft, tanks, mechs, small boats |
+| Capital | 100m-20km | Warships, transports, space stations |
+| Supermassive | 20km+ | Dreadnoughts, mega-ships, orbital structures |
+
+---
+
+## Size
+
+Size is a numerical rating from **0** to **9** that denotes an entity's relative position within its Scale. A Size of 0 indicates the entity is smaller than typical for its Scale but still classified within it. Size tiers provide granular differentiation between entities sharing the same Scale, enabling more precise comparisons and ensuring that scale-based modifiers remain proportionally balanced in combat calculations.
+
+### What Size Influences
+
+Size provides additional granularity beyond base Scale classification:
+
+- **Relative positioning**: Determines how a vehicle compares to others of the same Scale for collision, boarding, and proximity effects.
+- **Fine-grained damage adjustments**: Provides nuance within a Scale — a V5 fighter deals slightly more baseline damage than a V1 car despite both being Vehicle-scale.
+- **Cargo and capacity estimation**: Larger Size within a Scale typically correlates with greater internal volume for cargo and crew.
+
+### Practical Context
+
+| Scenario | Low Size (0-2) | High Size (7-9) |
+| -------- | -------------- | ---------------- |
+| Within-scale combat | Slightly smaller target; marginally harder to hit | Larger silhouette; easier target but potentially more firepower |
+| Capacity | Minimal internal volume; limited cargo and crew space | Generous internal volume; supports extensive systems and supplies |
+| Maneuverability | Lighter and more responsive within its Scale class | Heavier inertia; requires more power for equivalent maneuvers |
+
+### Size Tier Reference
+
+| Prefix | Scale | Range Example (P1/V1/C1/S1) |
+| ------ | ----- | --------------------------- |
+| P0-P9 | Personal | P3 = average human (1.5-2m); P9 = ~5m tall |
+| V0-V9 | Vehicle | V1 = car (~5m); V5 = heavy fighter (20-30m); V9 = 100m |
+| C0-C9 | Capital | C1 = frigate (~120m); C5 = aircraft carrier (~300m); C9 = ~20km |
+| S0-S5+ | Supermassive | S0 = Executor dreadnought (29km); S5 = Death Star (160km) |
 
 ---
 
@@ -72,7 +136,7 @@ Performance follows the same **-3 to +3 modifier scale** as character stats. Thi
 
 ## Structure
 
-Structure represents the total hit points of a vehicle — the amount of damage it can absorb before being destroyed or rendered inoperable. It measures the structural integrity of the vehicle's frame, power systems, and critical components combined into a single durability metric.
+Structure represents the total hit points of a vehicle — the amount of damage it can absorb before being destroyed or rendered inoperable. It measures the structural integrity of the vehicle's frame, power systems, and critical components combined into a single durability metric. Fighters tend to have between 2 and 5 points of structure while larger vehicles could have 10 or more.
 
 ### What Structure Influences
 
