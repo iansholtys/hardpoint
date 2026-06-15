@@ -1,5 +1,26 @@
-extensions:
-  - entity: item
-    module: entities/extensions/items.js
+entities:
+  - key: skill
+    module: entities/skill.js
+  - key: occupation
+    module: entities/occupation.js
+  - key: feature
+    module: entities/feature.js
+  - key: hardpoint_type
+    module: entities/hardpointType.js
+
+fieldTypes:
+  - module: entities/fieldTypes.js
+
+fields:
   - entity: character
-    module: entities/extensions/characters.js
+    module: entities/fields/character.js
+  - entity: item
+    module: entities/fields/item.js
+  - entity: skill
+    module: entities/fields/skill.js
+  - entity: occupation
+    module: entities/fields/occupation.js
+  - entity: feature
+    module: entities/fields/feature.js
+  - entity: hardpoint_type
+    module: entities/fields/hardpointType.js

@@ -1,5 +1,9 @@
 -- Created: 2026-05-22
+-- DEFERRED: Character-owned vehicle instances — not part of the current scope.
+-- Re-enable when the vehicle / character_vehicle model is designed.
+-- See docs/field-storage-overhaul.md
 
+/*
 CREATE TABLE IF NOT EXISTS hardpoint.character_vehicles (
   guid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   vehicle_guid uuid NOT NULL REFERENCES hardpoint.vehicles(guid) ON DELETE CASCADE,
@@ -76,3 +80,4 @@ CREATE TABLE IF NOT EXISTS hardpoint.character_vehicle_crew_positions (
 );
 DROP TRIGGER IF EXISTS character_vehicle_crew_positions_update_datetime ON hardpoint.character_vehicle_crew_positions;
 CREATE TRIGGER character_vehicle_crew_positions_update_datetime BEFORE UPDATE ON hardpoint.character_vehicle_crew_positions FOR EACH ROW EXECUTE FUNCTION genrpg.set_update_datetime();
+*/

@@ -1,5 +1,9 @@
 -- Created: 2026-05-22
+-- DEFERRED: Vehicle templates — not part of the current scope.
+-- Re-enable when the vehicle / character_vehicle model is designed.
+-- See docs/field-storage-overhaul.md
 
+/*
 CREATE TABLE IF NOT EXISTS hardpoint.vehicle_types (
   guid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   name text NOT NULL,
@@ -77,3 +81,4 @@ CREATE TABLE IF NOT EXISTS hardpoint.vehicle_crew_positions (
 );
 DROP TRIGGER IF EXISTS vehicle_crew_positions_update_datetime ON hardpoint.vehicle_crew_positions;
 CREATE TRIGGER vehicle_crew_positions_update_datetime BEFORE UPDATE ON hardpoint.vehicle_crew_positions FOR EACH ROW EXECUTE FUNCTION genrpg.set_update_datetime();
+*/
