@@ -1,6 +1,7 @@
 -- Created: 2026-05-22
 -- Seed data for skills, occupations, occupation_skills, and hardpoint_types
 
+/*
 INSERT INTO hardpoint.skills (guid, name, description, is_pilot_skill, is_body, is_mind, is_spirit) VALUES
 (gen_random_uuid(), 'Academics', 'Knowledge of history, science, literature, and general scholarly subjects.', false, false, true, false),
 (gen_random_uuid(), 'Athletics', 'Physical fitness, endurance, speed, and athletic coordination.', false, true, false, false),
@@ -86,3 +87,4 @@ INSERT INTO hardpoint.hardpoint_types (guid, name, description) VALUES
 (gen_random_uuid(), 'Accessory', 'Minor slots for supplementary gear, sensors, and support systems.'),
 (gen_random_uuid(), 'Heavy', 'Reinforced mounts designed for large weapons and heavy equipment.'),
 (gen_random_uuid(), 'Engine', 'Power plant slots for primary and auxiliary propulsion systems.');
+*/
