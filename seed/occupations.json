@@ -1,0 +1,44 @@
+[
+  { "name": "Rural", "description": "Farmer, herder, rancher", "grantedSkills": [
+    { "skill": "Craft", "value": 1 },
+    { "skill": "Ride", "value": 1 }
+  ]},
+  { "name": "Wilderness", "description": "Hunter, tracker, guide", "grantedSkills": [
+    { "skill": "Survival", "value": 1 },
+    { "skill": "Awareness", "value": 1 }
+  ]},
+  { "name": "Industrial", "description": "Engineer, crew member", "grantedSkills": [
+    { "skill": "Mechanics", "value": 2 }
+  ]},
+  { "name": "Journalist", "description": "Reporter, writer", "grantedSkills": [
+    { "skill": "Investigation", "value": 1 },
+    { "skill": "Craft", "value": 1 }
+  ]},
+  { "name": "Entertainer", "description": "Musician, actor", "grantedSkills": [
+    { "skill": "Perform", "value": 1 },
+    { "skill": "Etiquette", "value": 1 }
+  ]},
+  { "name": "Urban", "description": "Office worker, shopkeeper, executive", "grantedSkills": [
+    { "skill": "Barter", "value": 1 },
+    { "skill": "Etiquette", "value": 1 }
+  ]},
+  { "name": "Security", "description": "Military, police, mercenary", "grantedSkills": [
+    { "skill": "Athletics", "value": 1 },
+    { "skill": "Shooting", "value": 1 }
+  ]},
+  { "name": "Criminal", "description": "Thief, pirate, smuggler", "grantedSkills": [
+    { "skill": "Larceny", "value": 1 },
+    { "skill": "Stealth", "value": 1 }
+  ]},
+  { "name": "Academic", "description": "Researcher, teacher, scientist", "grantedSkills": [
+    { "skill": "Academics", "value": 2 }
+  ]},
+  { "name": "Laborer", "description": "Factory worker, miner", "grantedSkills": [
+    { "skill": "Athletics", "value": 1 },
+    { "skill": "Close Combat", "value": 1 }
+  ]},
+  { "name": "Medical", "description": "Doctor, nurse", "grantedSkills": [
+    { "skill": "Medicine", "value": 1 },
+    { "skill": "Academics", "value": 1 }
+  ]}
+]

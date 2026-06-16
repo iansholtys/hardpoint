@@ -1,0 +1,9 @@
+[
+  { "name": "Integrated", "description": "Built-in systems that are permanently attached to the vehicle frame." },
+  { "name": "Actuator", "description": "Slots for responsive actuator-driven weapons and sensors requiring fast targeting." },
+  { "name": "Main", "description": "Primary hardpoints for standard weapon and sensor installations." },
+  { "name": "Flex", "description": "Versatile slots that can be reconfigured between different equipment types." },
+  { "name": "Accessory", "description": "Minor slots for supplementary gear, sensors, and support systems." },
+  { "name": "Heavy", "description": "Reinforced mounts designed for large weapons and heavy equipment." },
+  { "name": "Engine", "description": "Power plant slots for primary and auxiliary propulsion systems." }
+]
