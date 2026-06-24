@@ -7,6 +7,10 @@ entities:
     module: entities/feature.js
   - key: hardpoint_type
     module: entities/hardpointType.js
+  - key: vehicle_template
+    module: entities/vehicleTemplate.js
+  - key: vehicle
+    module: entities/vehicle.js
 
 fieldTypes:
   - module: entities/fieldTypes.js
@@ -24,3 +28,7 @@ fields:
     module: entities/fields/feature.js
   - entity: hardpoint_type
     module: entities/fields/hardpointType.js
+  - entity: vehicle_template
+    module: entities/fields/vehicleTemplate.js
+  - entity: vehicle
+    module: entities/fields/vehicle.js
