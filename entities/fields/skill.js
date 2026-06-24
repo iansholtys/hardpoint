@@ -11,6 +11,7 @@ module.exports = {
     description: {
       type: "text",
       label: "Description",
+      inputType: "textarea",
     },
     isPilotSkill: {
       type: "boolean",

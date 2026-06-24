@@ -1,6 +1,5 @@
 /**
  * Hardpoint fields on vehicle (package schema: hardpoint.vehicle_<field>).
- * Entity base table: hardpoint.vehicles
  */
 module.exports = {
   fields: {

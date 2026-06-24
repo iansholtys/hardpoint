@@ -8,21 +8,6 @@ class FeatureEntity extends BaseEntity {
     return require("../storage/featureStorage");
   }
 
-  static async getFormSchema(context) {
-    const storage = this.getStorage().global();
-    const fieldSpecs = await storage.getFieldSpecs();
-
-    const coreFields = await Promise.all(
-      Object.entries(fieldSpecs)
-        .filter(([, spec]) => !spec.readOnly)
-        .map(([key, spec]) => this.formFieldFromSpec(key, spec, { instance: context.instance })),
-    );
-
-    return {
-      groups: [{ id: "core", label: "Feature", fields: coreFields }],
-    };
-  }
-
   async collectValidationErrors() {
     const errors = await super.collectValidationErrors();
 
