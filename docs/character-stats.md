@@ -1,6 +1,6 @@
 # Character Stats
 
-Hardpoint is designed around a minimal set of primary stats, inspired by systems such as Warbirds RPG. By keeping individual values low, they can be combined into the primary derived stat — **Situational Awareness** (SA) — which is heavily used in vehicular combat and serves as one of the core design pillars of the system. SA is calculated by adding a character's Body, Mind, and Spirit together, which should total **+1 at character creation**.
+Hardpoint is designed around a minimal set of primary stats, inspired by systems such as Warbirds RPG. By keeping individual values low, they can be combined into the primary derived stat — **Instinct** (Instinct) — which is heavily used in vehicular combat and serves as one of the core design pillars of the system. Instinct is calculated by adding a character's Body, Mind, and Spirit together, which should total **+1 at character creation**.
 
 ## Stat Value Scale
 
@@ -43,9 +43,9 @@ Body is the primary stat for all physically demanding actions, including:
 | Endurance task | Fatigues quickly during prolonged physical exertion | Can march, fight, or labor for extended periods with minimal degradation |
 | Carrying capacity | Limited to light loads; struggles with heavy equipment | Capable of hauling heavy gear, dragging wounded allies, and operating cumbersome machinery |
 
-### Contribution to Situational Awareness
+### Contribution to Instinct
 
-Body contributes directly to the SA calculation. A physically robust character brings sharper reflexes and faster reaction times to vehicular combat, translating raw athleticism into battlefield awareness. Characters who invest heavily in Body will find their SA benefits from quick physical responses — such as reacting to sudden maneuvers or maintaining control under physical strain.
+Body contributes directly to the Instinct calculation. A physically robust character brings sharper reflexes and faster reaction times to vehicular combat, translating raw athleticism into battlefield awareness. Characters who invest heavily in Body will find their Instinct benefits from quick physical responses — such as reacting to sudden maneuvers or maintaining control under physical strain.
 
 ---
 
@@ -70,9 +70,9 @@ Mind is the primary stat for all cognitive and technical actions, including:
 | Tactical assessment | Misses critical details in the battlefield environment; makes poor strategic decisions | Quickly identifies enemy weaknesses, predicts movements, and formulates counter-strategies |
 | Technical operation | Requires assistance with advanced equipment; prone to operational errors | Operates sophisticated systems with ease; can multitask across multiple consoles simultaneously |
 
-### Contribution to Situational Awareness
+### Contribution to Instinct
 
-Mind contributes directly to the SA calculation. A sharp intellect enables a character to process battlefield information more effectively, translating raw data into actionable insights. Characters who invest heavily in Mind will find their SA benefits from superior pattern recognition, threat assessment, and predictive analysis during vehicular combat.
+Mind contributes directly to the Instinct calculation. A sharp intellect enables a character to process battlefield information more effectively, translating raw data into actionable insights. Characters who invest heavily in Mind will find their Instinct benefits from superior pattern recognition, threat assessment, and predictive analysis during vehicular combat.
 
 ---
 
@@ -97,9 +97,9 @@ Spirit is the primary stat for all actions requiring mental fortitude and social
 | Leading a squad | Orders are easily ignored; allies lose confidence during setbacks | Inspires loyalty and determination; can rally demoralized troops back into effective action |
 | Enduring hardship | Breaks down under prolonged stress or repeated failures | Presses forward despite mounting odds, often becoming the anchor for others around them |
 
-### Contribution to Situational Awareness
+### Contribution to Instinct
 
-Spirit contributes directly to the SA calculation. A strong will provides an intuitive grasp of the battlefield, allowing a character to sense threats and opportunities before they fully materialize. Characters who invest heavily in Spirit will find their SA benefits from heightened awareness, sharper instincts, and the ability to maintain clear focus even when surrounded by chaos.
+Spirit contributes directly to the Instinct calculation. A strong will provides an intuitive grasp of the battlefield, allowing a character to sense threats and opportunities before they fully materialize. Characters who invest heavily in Spirit will find their Instinct benefits from heightened awareness, sharper instincts, and the ability to maintain clear focus even when surrounded by chaos.
 
 ---
 
@@ -107,7 +107,7 @@ Spirit contributes directly to the SA calculation. A strong will provides an int
 
 Derived stats are secondary characteristics calculated from a character's primary stats (Body, Mind, Spirit), skills, and equipment. Unlike primary stats — which are fixed at creation subject to the +1 sum constraint — derived stats reflect how those base attributes combine with trained abilities and gear to produce measurable combat capabilities. Hardpoint defines four derived stats:
 
-- **Situational Awareness (SA)**: The sum of all three primary stats, governing battlefield perception and reaction speed in vehicular combat.
+- **Instinct (Instinct)**: The sum of all three primary stats, governing battlefield perception and reaction speed in vehicular combat.
 - **Defense**: Measures a character's ability to avoid incoming attacks through physical reflexes and trained movement.
 - **Resistance**: Determines how well a character withstands damage, environmental effects, and mental pressure.
 - **Health**: Represents total hit points — the amount of damage a character can absorb before being incapacitated.
@@ -116,39 +116,39 @@ Derived stats shift as characters acquire skills, equipment, or modifications, m
 
 ---
 
-### Situational Awareness (SA)
+### Instinct (Instinct)
 
-**Situational Awareness**, abbreviated as **SA**, is the most important derived statistic in Hardpoint. It represents a character's overall capacity to perceive, understand, and respond to their environment in real time — making it the cornerstone of vehicular combat mechanics.
+**Instinct**, abbreviated as **Instinct**, is the most important derived statistic in Hardpoint. It represents a character's overall capacity to perceive, understand, and respond to their environment in real time — making it the cornerstone of vehicular combat mechanics.
 
 #### Calculation
 
-SA is calculated by summing all three primary stats:
+Instinct is calculated by summing all three primary stats:
 
 ```
-SA = Body + Mind + Spirit
+Instinct = Body + Mind + Spirit
 ```
 
-Since the total of Body, Mind, and Spirit must equal **+1** at character creation, all newly created characters begin with an SA of **+1**. As characters gain modifications, suffer injuries, or acquire enhancements that alter their primary stats, their SA will shift accordingly.
+Since the total of Body, Mind, and Spirit must equal **+1** at character creation, all newly created characters begin with an Instinct of **+1**. As characters gain modifications, suffer injuries, or acquire enhancements that alter their primary stats, their Instinct will shift accordingly.
 
 #### Role in Vehicular Combat
 
-Situational Awareness is the primary modifier used in vehicular combat for the following reasons:
+Instinct is the primary modifier used in vehicular combat for the following reasons:
 
-- **Target acquisition**: SA determines how quickly a character spots and locks onto enemy targets while piloting or operating weapon systems.
+- **Target acquisition**: Instinct determines how quickly a character spots and locks onto enemy targets while piloting or operating weapon systems.
 - **Evasion and maneuvering**: Modifies checks to dodge incoming fire, predict enemy movements, and execute evasive maneuvers under pressure.
 - **Combat coordination**: Affects the ability to coordinate with wingmen, call in support, and maintain awareness of multiple threats simultaneously.
 - **System management**: Governs how effectively a character monitors onboard sensors, manages damage control, and prioritizes targets during active engagement.
 
-In essence, SA captures the combination of physical reflexes (Body), analytical processing (Mind), and intuitive focus (Spirit) that every effective combatant needs to survive in the heat of battle. A high SA value means the character can perceive more of their surroundings, process threats faster, and react with greater precision — regardless of which individual stat contributed most to that total.
+In essence, Instinct captures the combination of physical reflexes (Body), analytical processing (Mind), and intuitive focus (Spirit) that every effective combatant needs to survive in the heat of battle. A high Instinct value means the character can perceive more of their surroundings, process threats faster, and react with greater precision — regardless of which individual stat contributed most to that total.
 
 #### Balancing Considerations
 
-Because SA is the sum of all three stats, players must consider how their primary stat distribution affects both specialized performance and overall awareness:
+Because Instinct is the sum of all three stats, players must consider how their primary stat distribution affects both specialized performance and overall awareness:
 
-- **Specialized characters** (e.g., +2 Body / 0 Mind / -1 Spirit) maintain a solid SA of +1 but excel in specific domains while remaining average or below in others.
-- **Well-rounded characters** (e.g., +1 Body / +1 Mind / 0 Spirit) also achieve SA of +1 but distribute their competence more evenly, making them reliable across a broader range of challenges.
+- **Specialized characters** (e.g., +2 Body / 0 Mind / -1 Spirit) maintain a solid Instinct of +1 but excel in specific domains while remaining average or below in others.
+- **Well-rounded characters** (e.g., +1 Body / +1 Mind / 0 Spirit) also achieve Instinct of +1 but distribute their competence more evenly, making them reliable across a broader range of challenges.
 
-This design ensures that no character is truly "optimized" for SA at the expense of specialization — every build starts with the same baseline awareness, rewarding players for choosing the strengths that best fit their envisioned role.
+This design ensures that no character is truly "optimized" for Instinct at the expense of specialization — every build starts with the same baseline awareness, rewarding players for choosing the strengths that best fit their envisioned role.
 
 ---
 

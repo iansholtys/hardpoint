@@ -54,4 +54,4 @@ The mathematical impact of Advantage and Disadvantage is substantial, even at a 
 
 Multiple stacked instances further skew probability in extreme directions. With Advantage 2 (rolling 3d6 total, taking highest), the average climbs toward ~5.4. With Disadvantage 2, it drops toward ~1.7. These compounding effects make stacking scenarios — such as combining high ground with targeting lock-on while engaging an immobilized target at favorable scale — incredibly powerful, and conversely make stacked penalties devastating to overcome.
 
-This non-linear scaling ensures that Advantage and Disadvantage remain impactful across the full range of possible values, rewarding players who actively manage positioning, equipment, and situational awareness to tilt probability in their favor.
+This non-linear scaling ensures that Advantage and Disadvantage remain impactful across the full range of possible values, rewarding players who actively manage positioning, equipment, and Instinct to tilt probability in their favor.

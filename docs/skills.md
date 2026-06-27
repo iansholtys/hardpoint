@@ -16,13 +16,12 @@
 - Command (mind or spirit)
 - Perform (spirit)
 - Persuade (body, mind, or spirit)
-- ++Social Standing? (spirit) - To replace Etiquette and Publicity?
 
 
 ### Combat
-- Close Quarters Combat (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
-- Mid-Ranged Combat (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
-- Far-Ranged Combat (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
+- Close Combat (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
+- Combat (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
+- Ranged Combat (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
 
 
 
@@ -30,8 +29,8 @@
 
 ## Piloting Skills
 
-- Gunnery (SA) - The use of standard ranged weapons, fixed fighter guns
-- Melee (SA) - Extreme close combat, melee weapons, hand to hand, grappler ship combat, etc.
-- Ordinance (SA) - Heavy weapons such as heavy cannons, rockets, bombs
-- Piloting (SA) - How well a pilot can control their vehicle
-- Strafing (SA) - Attacking ground targets and flying close to objects
+- Gunnery (Instinct) - The use of standard ranged weapons, fixed fighter guns
+- Melee (Instinct) - Extreme close combat, melee weapons, hand to hand, grappler ship combat, etc.
+- Ordinance (Instinct) - Heavy weapons such as heavy cannons, rockets, bombs
+- Piloting (Instinct) - How well a pilot can control their vehicle
+- Strafing (Instinct) - Attacking ground targets and flying close to objects

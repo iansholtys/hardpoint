@@ -1,6 +1,6 @@
 # Vehicle Stats
 
-Hardpoint vehicles operate under a distinct statistical framework from characters, designed to accommodate the vast scale difference between a pilot in a mech suit and a capital ship crewed by dozens. While character stats rely on the compact -3 to +3 modifier scale, vehicle stats use broader numerical ranges appropriate for machines of varying size, capability, and purpose. Vehicle combat mechanics are anchored by the crew's **Situational Awareness** (SA), which bridges the gap between character capabilities and vehicular performance.
+Hardpoint vehicles operate under a distinct statistical framework from characters, designed to accommodate the vast scale difference between a pilot in a mech suit and a capital ship crewed by dozens. While character stats rely on the compact -3 to +3 modifier scale, vehicle stats use broader numerical ranges appropriate for machines of varying size, capability, and purpose. Vehicle combat mechanics are anchored by the crew's **Instinct** (Instinct), which bridges the gap between character capabilities and vehicular performance.
 
 ## Primary Stats Overview
 
@@ -170,7 +170,7 @@ Crew composition affects multiple aspects of vehicular operation:
 
 - **System operation**: Each crew role (Pilot, Weapons Engineer, Navigator, etc.) governs specific systems and contributes relevant character skills to derived stat calculations.
 - **Multitasking capacity**: Vehicles with larger crews can operate multiple systems simultaneously — such as firing weapons while maneuvering and managing shields.
-- **Situational Awareness scaling**: Different crew members contribute their individual SA values to different vehicle functions, allowing specialized roles to excel in their domain.
+- **Instinct scaling**: Different crew members contribute their individual Instinct values to different vehicle functions, allowing specialized roles to excel in their domain.
 
 ### Practical Context
 
@@ -186,7 +186,7 @@ Common crew roles include:
 
 - **Pilot**: Controls vehicle movement and maneuvering. Contributes Piloting skill to Dogfighting, Strafing, Break Defense, and related checks.
 - **Weapons Operator / Engineer**: Manages weapon systems and target acquisition. Contributes Gunnery or Ordinance skills to attack rolls.
-- **Navigator / Sensor Operator**: Handles navigation, target tracking, and situational awareness. May boost SA-related calculations for the entire crew.
+- **Navigator / Sensor Operator**: Handles navigation, target tracking, and Instinct. May boost Instinct-related calculations for the entire crew.
 - **Captain**: Provides command and coordination bonuses. Particularly relevant on larger vessels with multiple crew members requiring direction.
 
 When a vehicle operates below optimal crew capacity, it may suffer penalties to certain derived stats or lose access to specific systems entirely. The game master determines the severity of these penalties based on which roles are unfilled.
@@ -295,9 +295,9 @@ Traits are acquired through vehicle customization and represent long-term invest
 
 ## Derived Stats
 
-Vehicle derived stats combine crew member attributes (SA and skills) with vehicle primary stats (primarily Performance) to produce measurable combat capabilities. These calculations bridge the gap between character ability and vehicular performance, ensuring that both pilot skill and machine quality contribute meaningfully to outcomes.
+Vehicle derived stats combine crew member attributes (Instinct and skills) with vehicle primary stats (primarily Performance) to produce measurable combat capabilities. These calculations bridge the gap between character ability and vehicular performance, ensuring that both pilot skill and machine quality contribute meaningfully to outcomes.
 
-**Important**: SA in all vehicle formulas refers to the **crew member's Situational Awareness** (calculated as Body + Mind + Spirit from character stats), not a property of the vehicle itself. Skills refer to the relevant character skill of the crew member operating that system. The game master determines which crew member contributes their values based on role assignment and current situation.
+**Important**: Instinct in all vehicle formulas refers to the **crew member's Instinct** (calculated as Body + Mind + Spirit from character stats), not a property of the vehicle itself. Skills refer to the relevant character skill of the crew member operating that system. The game master determines which crew member contributes their values based on role assignment and current situation.
 
 Derived stats are organized into three categories: **Maneuvering**, **Combat**, and **Defense**.
 
@@ -305,7 +305,7 @@ Derived stats are organized into three categories: **Maneuvering**, **Combat**, 
 
 ### Maneuvering
 
-Maneuvering derived stats govern how effectively a vehicle can position itself in combat — executing turns, accelerations, and tactical movements to gain advantage over opponents. These checks primarily rely on the Pilot's SA and Piloting skill, combined with the vehicle's Performance rating.
+Maneuvering derived stats govern how effectively a vehicle can position itself in combat — executing turns, accelerations, and tactical movements to gain advantage over opponents. These checks primarily rely on the Pilot's Instinct and Piloting skill, combined with the vehicle's Performance rating.
 
 #### Dogfighting
 
@@ -314,10 +314,10 @@ Dogfighting measures a vehicle's ability to engage in close-range aerial or orbi
 **Calculation:**
 
 ```
-Dogfighting = SA + Piloting Skill + Performance + applicable Traits
+Dogfighting = Instinct + Piloting Skill + Performance + applicable Traits
 ```
 
-The Pilot's **SA** provides baseline reaction speed, **Piloting Skill** represents trained maneuvering ability, and **Performance** reflects how responsive the vehicle is to pilot input. Applicable Traits (such as Enhanced Gyroscopes) may provide additional bonuses if they specifically reference Dogfighting or close-range maneuvering.
+The Pilot's **Instinct** provides baseline reaction speed, **Piloting Skill** represents trained maneuvering ability, and **Performance** reflects how responsive the vehicle is to pilot input. Applicable Traits (such as Enhanced Gyroscopes) may provide additional bonuses if they specifically reference Dogfighting or close-range maneuvering.
 
 Dogfighting is used for:
 - Close-range turning engagements where positional advantage determines who can fire effectively.
@@ -331,10 +331,10 @@ Strafing measures a vehicle's ability to execute targeted approach runs — acce
 **Calculation:**
 
 ```
-Strafing = SA + Strafing Skill + Performance + applicable Traits
+Strafing = Instinct + Strafing Skill + Performance + applicable Traits
 ```
 
-The Pilot's **SA** enables timing of the approach run, **Strafing Skill** represents trained execution of attack passes, and **Performance** determines acceleration and deceleration capability. Traits that enhance acceleration or targeting during movement may contribute additional bonuses.
+The Pilot's **Instinct** enables timing of the approach run, **Strafing Skill** represents trained execution of attack passes, and **Performance** determines acceleration and deceleration capability. Traits that enhance acceleration or targeting during movement may contribute additional bonuses.
 
 Strafing is used for:
 - Calculating the angle and timing of an attack pass against a stationary or slow-moving target.
@@ -345,7 +345,7 @@ Strafing is used for:
 
 ### Combat
 
-Combat derived stats govern how effectively a vehicle can deliver damage through its weapons systems. These checks primarily rely on the Weapons Operator's SA and relevant skill (Gunnery, Melee, or Ordinance), combined with weapon-specific modifiers and the vehicle's Performance where applicable.
+Combat derived stats govern how effectively a vehicle can deliver damage through its weapons systems. These checks primarily rely on the Weapons Operator's Instinct and relevant skill (Gunnery, Melee, or Ordinance), combined with weapon-specific modifiers and the vehicle's Performance where applicable.
 
 #### Gunnery
 
@@ -354,10 +354,10 @@ Gunnery measures accuracy when firing continuous-fire or rapid-cycling weapons s
 **Calculation:**
 
 ```
-Gunnery = SA + Gunnery Skill + Accuracy (from weapon) + Traits
+Gunnery = Instinct + Gunnery Skill + Accuracy (from weapon) + Traits
 ```
 
-The Weapons Operator's **SA** determines tracking precision under pressure, **Gunnery Skill** represents trained proficiency with continuous-fire weapons, and **Accuracy** is a property of the specific weapon system being operated. Traits that enhance targeting or weapon stabilization may provide additional bonuses.
+The Weapons Operator's **Instinct** determines tracking precision under pressure, **Gunnery Skill** represents trained proficiency with continuous-fire weapons, and **Accuracy** is a property of the specific weapon system being operated. Traits that enhance targeting or weapon stabilization may provide additional bonuses.
 
 Gunnery is used for:
 - Firing beam weapons, vulcan cannons, autocannons, and other sustained-fire systems.
@@ -371,10 +371,10 @@ Melee measures the effectiveness of physical contact attacks performed by the ve
 **Calculation:**
 
 ```
-Melee = SA + Melee Skill + Performance + Traits
+Melee = Instinct + Melee Skill + Performance + Traits
 ```
 
-The relevant crew member's **SA** (typically the Pilot for contact maneuvers) provides reaction timing, **Melee Skill** represents trained close-combat ability, and **Performance** reflects how forcefully the vehicle can execute physical attacks. Traits that enhance actuators or frame strength may contribute additional bonuses.
+The relevant crew member's **Instinct** (typically the Pilot for contact maneuvers) provides reaction timing, **Melee Skill** represents trained close-combat ability, and **Performance** reflects how forcefully the vehicle can execute physical attacks. Traits that enhance actuators or frame strength may contribute additional bonuses.
 
 Melee is used for:
 - Mech-to-mech hand-to-hand combat using actuator-carried weapons.
@@ -388,10 +388,10 @@ Ordinance measures accuracy when firing projectile-based weaponry such as missil
 **Calculation:**
 
 ```
-Ordinance = SA + Ordinance Skill + Accuracy (from weapon) + Traits
+Ordinance = Instinct + Ordinance Skill + Accuracy (from weapon) + Traits
 ```
 
-The Weapons Operator's **SA** enables assessment of target movement for predictive aiming, **Ordinance Skill** represents trained proficiency with projectile weapons, and **Accuracy** is a property of the specific ordnance system being deployed. Traits that enhance ballistic computation or missile guidance may provide additional bonuses.
+The Weapons Operator's **Instinct** enables assessment of target movement for predictive aiming, **Ordinance Skill** represents trained proficiency with projectile weapons, and **Accuracy** is a property of the specific ordnance system being deployed. Traits that enhance ballistic computation or missile guidance may provide additional bonuses.
 
 Ordinance is used for:
 - Firing missile pods, torpedo launchers, rocket batteries, and bomb drops.
@@ -402,7 +402,7 @@ Ordinance is used for:
 
 ### Defense
 
-Defense derived stats measure how effectively a vehicle can avoid taking damage through evasion, positioning, and reactive maneuvers. These checks primarily rely on the Pilot's SA and Piloting skill, combined with the vehicle's Performance rating. Defense values are specialized for different combat scenarios, reflecting that optimal evasion tactics vary depending on the threat type.
+Defense derived stats measure how effectively a vehicle can avoid taking damage through evasion, positioning, and reactive maneuvers. These checks primarily rely on the Pilot's Instinct and Piloting skill, combined with the vehicle's Performance rating. Defense values are specialized for different combat scenarios, reflecting that optimal evasion tactics vary depending on the threat type.
 
 #### Break Defense
 
@@ -411,10 +411,10 @@ Break Defense is the baseline defensive value used against most standard attacks
 **Calculation:**
 
 ```
-Break Defense = SA + Piloting Skill + Performance
+Break Defense = Instinct + Piloting Skill + Performance
 ```
 
-The Pilot's **SA** enables threat perception and reaction timing, **Piloting Skill** represents trained evasion techniques, and **Performance** determines how quickly the vehicle can execute defensive maneuvers. This is the default defense value used when no specific scenario modifier applies.
+The Pilot's **Instinct** enables threat perception and reaction timing, **Piloting Skill** represents trained evasion techniques, and **Performance** determines how quickly the vehicle can execute defensive maneuvers. This is the default defense value used when no specific scenario modifier applies.
 
 Break Defense is used for:
 - Standard evasive checks against incoming fire from most weapon types.
@@ -462,10 +462,10 @@ Stunt Defense measures the vehicle's ability to execute unconventional maneuvers
 **Calculation:**
 
 ```
-Stunt Defense = SA + Piloting Skill
+Stunt Defense = Instinct + Piloting Skill
 ```
 
-The Pilot's **SA** provides the spatial awareness necessary to judge distances and timing for unconventional movements, while **Piloting Skill** represents trained ability to execute complex maneuvers beyond standard combat maneuvers. The absence of Performance means that even modestly-equipped vehicles can perform impressive stunts in skilled hands — though higher-Performance vehicles may benefit from Traits that specifically enhance stunt capability.
+The Pilot's **Instinct** provides the spatial awareness necessary to judge distances and timing for unconventional movements, while **Piloting Skill** represents trained ability to execute complex maneuvers beyond standard combat maneuvers. The absence of Performance means that even modestly-equipped vehicles can perform impressive stunts in skilled hands — though higher-Performance vehicles may benefit from Traits that specifically enhance stunt capability.
 
 Stunt Defense is used for:
 - Executing barrel rolls, loops, and other flashy maneuvers to confuse targeting systems.
@@ -491,7 +491,7 @@ Mechs are pilot-worn power frames optimized for close-quarters combat, combining
 | **Hardpoints** | 2 Actuators (hands carrying 1 beam rifle + 1 shield); 3 Accessory mounts (1 beam saber, 2 beam rifle reloads); 1 Integrated mount (Vulcan cannon); 2 Engine mounts (Nuclear reactor, Jetpack) |
 | **Cargo** | 50 cubes |
 
-The mech's high Performance (+2) and moderate Armor (5) reflect its role as an agile frontline combatant. With only a single crew member (the Pilot), all derived stats depend on that pilot's SA and skill diversity. The actuator hardpoints provide exceptional melee capability, while the integrated vulcan cannon offers reliable ranged firepower without consuming flexible mount slots.
+The mech's high Performance (+2) and moderate Armor (5) reflect its role as an agile frontline combatant. With only a single crew member (the Pilot), all derived stats depend on that pilot's Instinct and skill diversity. The actuator hardpoints provide exceptional melee capability, while the integrated vulcan cannon offers reliable ranged firepower without consuming flexible mount slots.
 
 ### Fighter
 
@@ -506,7 +506,7 @@ Fighters are lightweight aerial craft designed for speed, agility, and precision
 | **Hardpoints** | 1 Main mount (Beam cannon); 1 Flex mount (Shield generator); 1 Heavy mount (Missile pod); 1 Engine mount (Fusion engines) |
 | **Cargo** | 20 cubes |
 
-The fighter maximizes Performance (+3) at the cost of Structure (2), making it highly effective in dogfighting scenarios but vulnerable to sustained damage. With only four hardpoints total, loadout choices must be carefully balanced between offense, defense, and propulsion. The single-pilot crew means all systems rely on one person's SA and trained skills.
+The fighter maximizes Performance (+3) at the cost of Structure (2), making it highly effective in dogfighting scenarios but vulnerable to sustained damage. With only four hardpoints total, loadout choices must be carefully balanced between offense, defense, and propulsion. The single-pilot crew means all systems rely on one person's Instinct and trained skills.
 
 ### Capital Ship
 

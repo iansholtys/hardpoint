@@ -56,11 +56,11 @@ Leftover damage gets applied to a character's Health.
 
 ## Vehicle Combat
 
-Initiative (1d6 + Performance + Piloting + SA) - this is a bit different in a dogfight - effectively the highest initiatives gets to pick/declare their target and can do things like hold, shoot, etc.
+Initiative (1d6 + Performance + Piloting + Instinct) - this is a bit different in a dogfight - effectively the highest initiatives gets to pick/declare their target and can do things like hold, shoot, etc.
 
 If they decide to shoot, the defender decides what to do (most typically Break Defence in order to not get hit). So attacker would roll against Break Defence in this casee.
 
-Attacks (1d6 + SA + Relevant Skill) vs Break Defence. Tie counts as a hit, Margin of excess is "Lead"
+Attacks (1d6 + Instinct + Relevant Skill) vs Break Defence. Tie counts as a hit, Margin of excess is "Lead"
 
 Damage ((Weapon Damage * Scale modifier(if any)) + Lead) - Armor. Armor can reduce damage down to 0.
 
