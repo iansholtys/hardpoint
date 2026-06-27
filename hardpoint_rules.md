@@ -16,7 +16,7 @@ Pilot skills are typically used inside vehicles. Pilot skills add the modifiers 
 
 ### Occupations
 
-Every character has an occupation, representing their background. Occupations provide skill points to one or more General skills.
+Every character has an occupation, representing their background. Occupations provide skill points to one or more skills (typically general or social skills, but may include personal combat skills).
 
 ## Character creation
 

@@ -30,7 +30,7 @@ Body represents a character's physical prowess, condensed into a single statisti
 
 Body is the primary stat for all physically demanding actions, including:
 
-- **Melee combat**: Determines damage output, melee attack checks, and resistance to being disarmed or knocked down.
+- **Close combat**: Determines damage output, close attack checks, and resistance to being disarmed or knocked down.
 - **Physical endurance**: Affects how long a character can sustain strenuous activity, resist fatigue, and push through injury.
 - **Athletic feats**: Governs checks for climbing, jumping, swimming, and other tests of physical agility and coordination.
 - **Resistance to physical trauma**: Modifies damage taken from blunt force, falls, environmental hazards, and similar threats.
@@ -39,7 +39,7 @@ Body is the primary stat for all physically demanding actions, including:
 
 | Scenario | Low Body (-2 to -1) | High Body (+2 to +3) |
 | -------- | ------------------- | -------------------- |
-| Melee combat | Struggles to land hits; easily overwhelmed in close quarters | Delivers devastating blows; can hold their own against multiple opponents |
+| Close combat | Struggles to land hits; easily overwhelmed in close quarters | Delivers devastating blows; can hold their own against multiple opponents |
 | Endurance task | Fatigues quickly during prolonged physical exertion | Can march, fight, or labor for extended periods with minimal degradation |
 | Carrying capacity | Limited to light loads; struggles with heavy equipment | Capable of hauling heavy gear, dragging wounded allies, and operating cumbersome machinery |
 
@@ -105,10 +105,10 @@ Spirit contributes directly to the Instinct calculation. A strong will provides 
 
 ## Derived Stats
 
-Derived stats are secondary characteristics calculated from a character's primary stats (Body, Mind, Spirit), skills, and equipment. Unlike primary stats — which are fixed at creation subject to the +1 sum constraint — derived stats reflect how those base attributes combine with trained abilities and gear to produce measurable combat capabilities. Hardpoint defines four derived stats:
+Derived stats are secondary characteristics calculated from a character's primary stats (Body, Mind, Spirit), skills, and equipment. Unlike primary stats — which are fixed at creation subject to the +1 sum constraint — derived stats reflect how those base attributes combine with trained abilities and gear to produce measurable combat capabilities. Hardpoint defines six derived stats:
 
-- **Instinct (Instinct)**: The sum of all three primary stats, governing battlefield perception and reaction speed in vehicular combat.
-- **Defense**: Measures a character's ability to avoid incoming attacks through physical reflexes and trained movement.
+- **Instinct**: The sum of all three primary stats, governing battlefield perception and reaction speed in vehicular combat.
+- **Close Defense**, **Ranged Defense**, and **Indirect Defense**: Measure a character's ability to avoid incoming attacks at different engagement ranges.
 - **Resistance**: Determines how well a character withstands damage, environmental effects, and mental pressure.
 - **Health**: Represents total hit points — the amount of damage a character can absorb before being incapacitated.
 
@@ -154,38 +154,41 @@ This design ensures that no character is truly "optimized" for Instinct at the e
 
 ### Defense
 
-Defense measures a character's ability to avoid incoming attacks through quick reflexes, trained movement, and positional awareness. It represents how effectively a character can dodge, weave, or otherwise put themselves out of harm's way when under fire.
+Defense measures a character's ability to avoid incoming attacks through quick reflexes, trained movement, and positional awareness. Personal defense is split into three derived values based on engagement range.
 
 #### Calculation
 
-Defense is calculated as follows:
-
 ```
-Defense = 3 + Body + Relevant Skill (Defaults to Athletics outside of combat, during combat would be Close/Mid/Far based on positioning against enemy)
+Close Defense = 3 + Body + Close Combat (Personal)
+Ranged Defense = 3 + Spirit + Ranged Combat (Personal)
+Indirect Defense = 3 + Mind + Indirect Combat (Personal)
 ```
 
-The base value of **3** represents average situational reflexes — the natural ability any functional human has to flinch, duck, or step aside from an obvious threat. Body adds raw physical agility and reaction speed, while Athletics is a trained skill representing deliberate combat movement, footwork, and evasion techniques.
+Outside of combat, evasion checks default to `3 + Body + Athletics`.
+
+The base value of **3** represents average situational reflexes — the natural ability any functional human has to flinch, duck, or step aside from an obvious threat. Each defense pairs the primary stat most relevant to that range with the matching personal combat skill.
 
 #### What Defense Influences
 
 Defense is used in all defensive checks where a character attempts to avoid being hit, including:
 
-- **Melee defense**: Modifies checks to dodge swings, parry attacks, or maintain advantageous positioning against close-combat opponents.
-- **Evasion against projectiles**: Affects the ability to duck behind cover, sidestep incoming fire, and break line-of-sight with ranged attackers.
-- **Resisting grapples and holds**: Determines how well a character breaks free from grabs, clinches, and controlling maneuvers.
+- **Close defense**: Modifies checks to dodge swings, parry attacks, or maintain advantageous positioning against close-combat opponents.
+- **Ranged defense**: Affects the ability to duck behind cover, sidestep incoming fire, and break line-of-sight with ranged attackers.
+- **Indirect defense**: Modifies checks to avoid long-range or area fire where awareness and prediction matter more than raw agility.
+- **Resisting grapples and holds**: Typically uses Close Defense.
 - **Environmental avoidance**: Modifies checks to dodge falling debris, slipping on hazards, or maintaining balance during vehicle movement.
 
 #### Practical Examples
 
 | Scenario | Low Defense (1-2) | High Defense (4-5) |
 | -------- | ----------------- | ------------------ |
-| Melee combat | Easily caught by opponents' attacks; struggles to maintain distance | Fluidly dodges and weaves through enemy strikes; controls engagement range |
+| Close combat | Easily caught by opponents' attacks; struggles to maintain distance | Fluidly dodges and weaves through enemy strikes; controls engagement range |
 | Under ranged fire | Takes repeated hits while advancing; cover is often poorly timed | Times movements between bursts; uses terrain efficiently to minimize exposure |
 | Grapple attempt | Quickly overpowered once an opponent closes in | Twists free from grabs; counters with positional advantages |
 
 #### Range Analysis
 
-Defense can range from an absolute minimum of **0** (requiring Body -3, which only occurs in injured/degraded states) to a maximum of **5** (at Body +2, Athletics max). At character creation with valid stats (Body between -1 and +2), the practical floor is approximately **2** at Body -1 with no Athletics training. Characters who invest heavily in both physical attributes and combat training will find themselves remarkably difficult to hit, while those focused on mental or spiritual development may need to rely more on cover and allies for protection.
+Each defense can range from an absolute minimum of **0** (requiring the relevant primary stat at -3, which only occurs in injured/degraded states) to a practical maximum around **5** at creation. Characters who invest in both the relevant primary stat and the matching combat skill will be harder to hit at that range, while those focused elsewhere may need to rely more on cover and allies for protection.
 
 ---
 

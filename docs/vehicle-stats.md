@@ -117,7 +117,7 @@ Performance is an abstract statistic that denotes the relative combat effectiven
 Performance serves as a universal bonus to vehicular actions, affecting:
 
 - **Maneuvering checks**: Directly modifies Dogfighting and Strafing derived stats, representing how well the vehicle can execute complex movements.
-- **Close-quarters combat**: Adds to Melee attack rolls when vehicles engage in physical contact combat (such as mech-to-mech brawling or ship ramming).
+- **Close-quarters combat**: Adds to Close Combat attack rolls when vehicles engage in physical contact combat (such as mech-to-mech brawling or ship ramming).
 - **Evasive capability**: Contributes to Break Defense and other defensive calculations, reflecting how quickly the vehicle can change direction.
 
 ### Practical Context
@@ -185,7 +185,7 @@ Crew composition affects multiple aspects of vehicular operation:
 Common crew roles include:
 
 - **Pilot**: Controls vehicle movement and maneuvering. Contributes Piloting skill to Dogfighting, Strafing, Break Defense, and related checks.
-- **Weapons Operator / Engineer**: Manages weapon systems and target acquisition. Contributes Gunnery or Ordinance skills to attack rolls.
+- **Weapons Operator / Engineer**: Manages weapon systems and target acquisition. Contributes Ranged Combat or Indirect Combat skills to attack rolls.
 - **Navigator / Sensor Operator**: Handles navigation, target tracking, and Instinct. May boost Instinct-related calculations for the entire crew.
 - **Captain**: Provides command and coordination bonuses. Particularly relevant on larger vessels with multiple crew members requiring direction.
 
@@ -285,7 +285,7 @@ Traits provide targeted bonuses to derived stats and special abilities:
 
 - **Enhanced Gyroscopes**: +1 bonus to Dogfighting derived stat.
 - **Reactive Plating**: Reduces incoming damage from explosive weapons by 1.
-- **Targeting Computer**: +1 bonus to Gunnery and Ordinance checks when firing mounted weapons.
+- **Targeting Computer**: +1 bonus to Ranged Combat and Indirect Combat checks when firing mounted weapons.
 - **Emergency Thrusters**: Once per combat, allows the vehicle to make a free evasive maneuver at double normal Performance bonus.
 - **Stealth Coating**: Makes the vehicle harder to detect, granting a bonus to Stunt Defense during ambush scenarios.
 
@@ -345,55 +345,55 @@ Strafing is used for:
 
 ### Combat
 
-Combat derived stats govern how effectively a vehicle can deliver damage through its weapons systems. These checks primarily rely on the Weapons Operator's Instinct and relevant skill (Gunnery, Melee, or Ordinance), combined with weapon-specific modifiers and the vehicle's Performance where applicable.
+Combat derived stats govern how effectively a vehicle can deliver damage through its weapons systems. These checks primarily rely on the Weapons Operator's Instinct and the relevant pilot skill — **Close Combat**, **Ranged Combat**, or **Indirect Combat** — combined with weapon-specific modifiers and the vehicle's Performance where applicable.
 
-#### Gunnery
+#### Ranged Combat
 
-Gunnery measures accuracy when firing continuous-fire or rapid-cycling weapons such as beam rifles, vulcan cannons, and autocannons.
+Ranged Combat measures accuracy when firing continuous-fire or rapid-cycling weapons such as beam rifles, vulcan cannons, and autocannons.
 
 **Calculation:**
 
 ```
-Gunnery = Instinct + Gunnery Skill + Accuracy (from weapon) + Traits
+Ranged Combat = Instinct + Ranged Combat Skill + Accuracy (from weapon) + Traits
 ```
 
-The Weapons Operator's **Instinct** determines tracking precision under pressure, **Gunnery Skill** represents trained proficiency with continuous-fire weapons, and **Accuracy** is a property of the specific weapon system being operated. Traits that enhance targeting or weapon stabilization may provide additional bonuses.
+The Weapons Operator's **Instinct** determines tracking precision under pressure, **Ranged Combat Skill** represents trained proficiency with continuous-fire weapons, and **Accuracy** is a property of the specific weapon system being operated. Traits that enhance targeting or weapon stabilization may provide additional bonuses.
 
-Gunnery is used for:
+Ranged Combat is used for:
 - Firing beam weapons, vulcan cannons, autocannons, and other sustained-fire systems.
 - Tracking moving targets with continuous weapon fire.
 - Suppressing enemy positions with volume of fire.
 
-#### Melee
+#### Close Combat
 
-Melee measures the effectiveness of physical contact attacks performed by the vehicle itself — such as a mech striking with mounted blades, a ship ramming an opponent, or a ground vehicle shoving an obstacle aside.
+Close Combat measures the effectiveness of physical contact attacks performed by the vehicle itself — such as a mech striking with mounted blades, a ship ramming an opponent, or a ground vehicle shoving an obstacle aside.
 
 **Calculation:**
 
 ```
-Melee = Instinct + Melee Skill + Performance + Traits
+Close Combat = Instinct + Close Combat Skill + Performance + Traits
 ```
 
-The relevant crew member's **Instinct** (typically the Pilot for contact maneuvers) provides reaction timing, **Melee Skill** represents trained close-combat ability, and **Performance** reflects how forcefully the vehicle can execute physical attacks. Traits that enhance actuators or frame strength may contribute additional bonuses.
+The relevant crew member's **Instinct** (typically the Pilot for contact maneuvers) provides reaction timing, **Close Combat Skill** represents trained close-combat ability, and **Performance** reflects how forcefully the vehicle can execute physical attacks. Traits that enhance actuators or frame strength may contribute additional bonuses.
 
-Melee is used for:
+Close Combat is used for:
 - Mech-to-mech hand-to-hand combat using actuator-carried weapons.
 - Ship ramming maneuvers against opposing vessels.
 - Physical shoving, grappling, or displacement of obstacles and enemy vehicles.
 
-#### Ordinance
+#### Indirect Combat
 
-Ordinance measures accuracy when firing projectile-based weaponry such as missiles, torpedoes, rockets, and bombs — systems that require trajectory calculation and lead-time targeting rather than direct line-of-sight fire.
+Indirect Combat measures accuracy when firing projectile-based weaponry such as missiles, torpedoes, rockets, and bombs — systems that require trajectory calculation and lead-time targeting rather than direct line-of-sight fire.
 
 **Calculation:**
 
 ```
-Ordinance = Instinct + Ordinance Skill + Accuracy (from weapon) + Traits
+Indirect Combat = Instinct + Indirect Combat Skill + Accuracy (from weapon) + Traits
 ```
 
-The Weapons Operator's **Instinct** enables assessment of target movement for predictive aiming, **Ordinance Skill** represents trained proficiency with projectile weapons, and **Accuracy** is a property of the specific ordnance system being deployed. Traits that enhance ballistic computation or missile guidance may provide additional bonuses.
+The Weapons Operator's **Instinct** enables assessment of target movement for predictive aiming, **Indirect Combat Skill** represents trained proficiency with projectile weapons, and **Accuracy** is a property of the specific ordnance system being deployed. Traits that enhance ballistic computation or missile guidance may provide additional bonuses.
 
-Ordinance is used for:
+Indirect Combat is used for:
 - Firing missile pods, torpedo launchers, rocket batteries, and bomb drops.
 - Targeting moving objects with trajectory-based attacks.
 - Coordinated salvo attacks requiring precise timing and range estimation.
@@ -491,7 +491,7 @@ Mechs are pilot-worn power frames optimized for close-quarters combat, combining
 | **Hardpoints** | 2 Actuators (hands carrying 1 beam rifle + 1 shield); 3 Accessory mounts (1 beam saber, 2 beam rifle reloads); 1 Integrated mount (Vulcan cannon); 2 Engine mounts (Nuclear reactor, Jetpack) |
 | **Cargo** | 50 cubes |
 
-The mech's high Performance (+2) and moderate Armor (5) reflect its role as an agile frontline combatant. With only a single crew member (the Pilot), all derived stats depend on that pilot's Instinct and skill diversity. The actuator hardpoints provide exceptional melee capability, while the integrated vulcan cannon offers reliable ranged firepower without consuming flexible mount slots.
+The mech's high Performance (+2) and moderate Armor (5) reflect its role as an agile frontline combatant. With only a single crew member (the Pilot), all derived stats depend on that pilot's Instinct and skill diversity. The actuator hardpoints provide exceptional close combat capability, while the integrated vulcan cannon offers reliable ranged firepower without consuming flexible mount slots.
 
 ### Fighter
 
@@ -521,4 +521,4 @@ Capital ships are large combat vessels that bring overwhelming firepower to bear
 | **Hardpoints** | 4 Main mounts (Beam turrets); 4 Heavy mounts (Missile pods); 2 Flex mounts (Sensor pod, Anti-missile defense system); 3 Accessory mounts (Shield generators); 9 Engine mounts (Fusion engines) |
 | **Cargo** | 10,000 cubes |
 
-The capital ship's high Armor (9) and massive hardpoint complement (22 total) allow it to dominate firepower exchanges. However, its negative Performance (-1) penalizes maneuvering and melee checks, making the ship most effective in sustained long-range engagements where positioning is established early and maintained through crew coordination rather than rapid movement. The large crew enables specialized roles: the Pilot handles Break Defense while the Weapons Engineer manages Gunnery and Ordinance independently.
+The capital ship's high Armor (9) and massive hardpoint complement (22 total) allow it to dominate firepower exchanges. However, its negative Performance (-1) penalizes maneuvering and close combat checks, making the ship most effective in sustained long-range engagements where positioning is established early and maintained through crew coordination rather than rapid movement. The large crew enables specialized roles: the Pilot handles Break Defense while the Weapons Engineer manages Ranged Combat and Indirect Combat independently.

@@ -24,7 +24,7 @@ A vehicle cannot go below a Performance level of -3 (just like it cannot go abov
 
 ## Character Combat
 
-A weapon determines it's optimal and effective range that it can be used at, but the character determines what skill (close-quarters, mid-range, far-range) to be used. Effective range would be at disadvantage (2d6 drop higher)
+A weapon determines its optimal and effective range, but the actual personal combat skill (Close, Ranged or Indirect) depends on engagement range. Attacks outside effective range are at disadvantage.
 
 Example:
 
@@ -39,14 +39,16 @@ Example:
 
 
 ### Character Combat Skills
-Close Quarters Combat (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
-Mid-Ranged Combat (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
-Far-Ranged Combat (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
+Close Combat (Personal) (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
+Ranged Combat (Personal) (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
+Indirect Combat (Personal) (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
+
+Vehicle combat uses the same three skill names without the (Personal) suffix.
 
 ## Combat Sequence
 Initiative (1d6 + Relevant Stat (typically Mind) + Awareness)
 
-Attacks (1d6 + Relevant Stat + Relevant Skill for the weapon type) vs Defense. Tie counts as a hit. Margin of excess is "Lead"
+Attacks (1d6 + Relevant Stat + Relevant Skill for the weapon type) vs the appropriate Defense (Close, Ranged, or Indirect). Tie counts as a hit. Margin of excess is "Lead"
 
 Damage ((Weapon Damage * Scale modifier(if any)) + Lead) - Resist/Armor. Resist/Armor can reduce damage down to 0.
 
@@ -58,9 +60,9 @@ Leftover damage gets applied to a character's Health.
 
 Initiative (1d6 + Performance + Piloting + Instinct) - this is a bit different in a dogfight - effectively the highest initiatives gets to pick/declare their target and can do things like hold, shoot, etc.
 
-If they decide to shoot, the defender decides what to do (most typically Break Defence in order to not get hit). So attacker would roll against Break Defence in this casee.
+If they decide to shoot, the defender decides what to do (most typically Break Defense in order to not get hit). So attacker would roll against Break Defense in this case.
 
-Attacks (1d6 + Instinct + Relevant Skill) vs Break Defence. Tie counts as a hit, Margin of excess is "Lead"
+Attacks (1d6 + Instinct + Relevant Skill) vs Break Defense. Tie counts as a hit. Margin of excess is "Lead"
 
 Damage ((Weapon Damage * Scale modifier(if any)) + Lead) - Armor. Armor can reduce damage down to 0.
 

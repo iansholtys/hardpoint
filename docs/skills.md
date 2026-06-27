@@ -18,10 +18,10 @@
 - Persuade (body, mind, or spirit)
 
 
-### Combat
-- Close Combat (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
-- Combat (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
-- Ranged Combat (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
+### Combat (Personal)
+- Close Combat (Personal) (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
+- Ranged Combat (Personal) (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
+- Indirect Combat (Personal) (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
 
 
 
@@ -29,8 +29,10 @@
 
 ## Piloting Skills
 
-- Gunnery (Instinct) - The use of standard ranged weapons, fixed fighter guns
-- Melee (Instinct) - Extreme close combat, melee weapons, hand to hand, grappler ship combat, etc.
-- Ordinance (Instinct) - Heavy weapons such as heavy cannons, rockets, bombs
+Vehicle combat uses the same three range tiers as personal combat. Vehicle skills share the same names as personal combat skills but without the (Personal) suffix.
+
+- Close Combat (Instinct) - Extreme close combat, melee weapons, hand to hand, grappler ship combat, etc.
+- Ranged Combat (Instinct) - The use of standard ranged weapons, fixed fighter guns
+- Indirect Combat (Instinct) - Heavy weapons such as heavy cannons, rockets, bombs
 - Piloting (Instinct) - How well a pilot can control their vehicle
 - Strafing (Instinct) - Attacking ground targets and flying close to objects
