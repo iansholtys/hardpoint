@@ -69,6 +69,10 @@ Leftover damage gets applied to a vehicle's structure
 
 ---
 
+Equipment bonuses/penalties can be a decimal up to 2 decimal places
+
+---
+
 
 ## Hardpoint Types
 

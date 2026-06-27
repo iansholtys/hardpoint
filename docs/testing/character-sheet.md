@@ -28,9 +28,9 @@
 | Stat | Formula | Value |
 |---|---|---|
 | **Instinct** | Body + Mind + Spirit | ____ |
-| **Close Defense** | 3 + Body | ____ |
-| **Defense** | 3 + Spirit | ____ |
-| **Ranged Defense** | 3 + Mind | ____ |
+| **Close Defense** | 3 + Body + Close Combat | ____ |
+| **Ranged Defense** | 3 + Spirit + Ranged Combat | ____ |
+| **Indirect Defense** | 3 + Mind + Indirect Combat | ____ |
 | **Resistance** | Spirit + Armor (equipment) | ____ |
 | **Health** | 3 + Body + Spirit | ____ |
 
@@ -66,9 +66,9 @@
 
 | Skill | Rating |
 |---|---|
-| Close Combat | ____ |
-| Combat | ____ |
-| Ranged Combat | ____ |
+| Close Combat (P)  | ____ |
+| Ranged Combat (P) | ____ |
+| Indirect Combat (P) | ____ |
 
 ---
 
@@ -76,9 +76,9 @@
 
 | Skill | Rating |
 |---|---|
-| Close Combat | ____ |
-| Combat | ____ |
-| Ranged Combat | ____ |
+| Close Combat (V) | ____ |
+| Ranged Combat (V) | ____ |
+| Indirect Combat (V) | ____ |
 | Piloting | ____ |
 | Strafing | ____ |
 
