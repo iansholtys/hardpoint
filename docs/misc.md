@@ -3,6 +3,8 @@
 ## Open Questions
 Rename "Resist" to Armor for Characters to keep consistent with vehicles?
 A vehicle cannot go below a Performance level of -3 (just like it cannot go above +3). - Should this instead be 0 to +6? Needs mathing.
+Is the die size of d6 appropriate? Or should we upgrade to d10?
+Should a Critical Success award 1XP like a Critical Failure?
 
 ---
 
@@ -37,15 +39,7 @@ Example:
 | Rifle  | 15m - 50m     | 5         | 100       |
 | Bow/Arrow | 15m - 35m  | 5         | 75        |
 
-
-### Character Combat Skills
-Close Combat (Personal) (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
-Ranged Combat (Personal) (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
-Indirect Combat (Personal) (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
-
-Vehicle combat uses the same three skill names without the (Personal) suffix.
-
-## Combat Sequence
+## Personal Scale Combat Sequence
 Initiative (1d6 + Relevant Stat (typically Mind) + Awareness)
 
 Attacks (1d6 + Relevant Stat + Relevant Skill for the weapon type) vs the appropriate Defense (Close, Ranged, or Indirect). Tie counts as a hit. Margin of excess is "Lead"
