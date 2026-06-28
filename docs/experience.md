@@ -16,4 +16,6 @@ Cost to purchase a Skill level:
 Max skill level 6, but is capped based off of Insight Milestone + 2
 
 
-Experience can be spent at any time, including in the middle of your fucking turn.
+Experience can be spent at any time, including in the middle of your turn.
+
+When doing something awesome or gaining experience from a Critical Success or Failure, typically the bonus experience goes to the associated skill. If full experience sharing is enabled (consult your GM), all players gain the experience.

@@ -5,6 +5,7 @@ Rename "Resist" to Armor for Characters to keep consistent with vehicles?
 A vehicle cannot go below a Performance level of -3 (just like it cannot go above +3). - Should this instead be 0 to +6? Needs mathing.
 Is the die size of d6 appropriate? Or should we upgrade to d10?
 Should a Critical Success award 1XP like a Critical Failure?
+Multiple actions in combat gives a penalty equal to the number of actions being performed to attacks and defense
 
 ---
 

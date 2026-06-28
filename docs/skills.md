@@ -17,13 +17,12 @@
 - Perform (spirit)
 - Persuade (body, mind, or spirit)
 
+---
 
 ### Combat (Personal)
 - Close Combat (Personal) (weapon determines the stat to use) - < 5 meter combat - punching, kicking, knives, pistols, etc.
 - Ranged Combat (Personal) (weapon determines the stat to use) - 5 to 100 meter - pistols, rifles, bows and arrows
 - Indirect Combat (Personal) (weapon determines the stat to use) - 100+ meter - marksman rifles, rockets, mortars, etc.
-
-
 
 ---
 
@@ -36,3 +35,9 @@ Vehicle combat uses the same three range tiers as personal combat. Vehicle skill
 - Indirect Combat (Instinct) - Heavy weapons such as heavy cannons, rockets, bombs
 - Piloting (Instinct) - How well a pilot can control their vehicle
 - Strafing (Instinct) - Attacking ground targets and flying close to objects
+
+---
+
+### Making Unskilled rolls
+
+If a character lacks any training in a skill, typically the difficulty of the task is increased by 2.
